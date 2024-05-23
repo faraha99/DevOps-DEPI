@@ -40,7 +40,6 @@ Returns the current adjusted time and weather information for Cairo, Egypt.
 Response:
 
 json
-نسخ الكود
 {
   "current_time": "2023-05-23 11:22:33 AM",
   "time_zone": "Africa/Cairo",
@@ -52,12 +51,10 @@ json
 Running Tests
 To run the tests for the application, use the following command:
 
-sh
-نسخ الكود
+
 pytest
 Project Structure
 bash
-نسخ الكود
 .
 ├── app.py                  # Main application file
 ├── tests
