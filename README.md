@@ -84,6 +84,5 @@ Flask
 pytest
 pytz
 OpenWeatherMap API
-Author
-Your Name
+Farah Ahmed
 Feel free to contribute to this project by submitting issues or pull requests.
