@@ -8,33 +8,27 @@ Provides weather information for Cairo, including the weather description and te
 Setup and Installation
 Clone the repository:
 
-sh
-نسخ الكود
+
 git clone <repository-url>
 cd <repository-directory>
 Create a virtual environment and activate it:
 
-sh
-نسخ الكود
+
 python3 -m venv venv
 source venv/bin/activate   # On Windows use `venv\Scripts\activate`
 Install the dependencies:
-
-sh
-نسخ الكود
 pip install -r requirements.txt
 Set up environment variables:
 
 Create a .env file in the root directory and add your OpenWeatherMap API key:
 
 makefile
-نسخ الكود
+
 API_KEY=your_openweathermap_api_key
 Running the Application
 To run the application, use the following command:
 
-sh
-نسخ الكود
+
 python app.py
 The application will be accessible at http://0.0.0.0:5000/.
 
