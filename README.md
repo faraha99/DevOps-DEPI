@@ -60,7 +60,6 @@ Flask
 pytz
 requests
 pytest
-License
 
 
 Acknowledgements
