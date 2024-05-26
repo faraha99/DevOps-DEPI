@@ -58,7 +58,9 @@ bash
 .
 ├── app.py                  # Main application file
 ├── tests
-│   └── test_app.py         # Test cases
+│   └── test_app.py# Test cases
+├── templates
+│   └── index.html
 ├── requirements.txt        # Project dependencies
 ├── README.md               # Project documentation
 └── .env                    # Environment variables (not included in version control)
