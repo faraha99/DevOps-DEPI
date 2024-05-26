@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Weather App</h1>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Current Time and Weather in Cairo, Egypt</h5>
+                <p class="card-text"><strong>Current Time:</strong> {{ current_time }} ({{ time_zone }})</p>
+                <p class="card-text"><strong>Weather:</strong> {{ weather_description }}</p>
+                <p class="card-text"><strong>Temperature:</strong> {{ temperature }}°C</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
