@@ -1,6 +1,6 @@
 README.md
 Flask Web Application
-This is a Flask web application that provides the current adjusted time and weather information for Cairo, Egypt. The time is adjusted by subtracting one hour from the current time in Cairo, and the weather information is fetched from the OpenWeatherMap API.
+This is a Flask web application that provides the current adjusted time and weather information for Cairo, Egypt. the weather information is fetched from the OpenWeatherMap API.
 
 Features
 Displays the current adjusted time in Cairo, Egypt in the format YYYY-MM-DD HH:MM:SS AM/PM.
