@@ -47,6 +47,47 @@ To run the application using Podman, make sure you have Podman installed on your
     ```
 
 The application will be accessible at <http://127.0.0.1:5000/>.
+## Managing Containers with Podman-Compose
+
+This project uses Podman-Compose to manage the containers. Podman-Compose is a tool for defining and running multi-container Docker applications using Podman. It uses a `docker-compose.yml` file to configure the application's services.
+
+### Installation
+
+To install Podman-Compose, you can use the following steps:
+
+1. Download the Podman-Compose binary for your system from the Podman GitHub releases page.
+
+2. Extract the downloaded binary to a directory in your PATH, such as `/usr/local/bin`.
+
+3. Ensure the Podman service is running.
+
+### Usage
+
+Once Podman-Compose is installed, you can use it to manage your containers. Here are some common commands:
+
+- `podman-compose up`: Start the containers defined in the `docker-compose.yml` file.
+- `podman-compose down`: Stop and remove the containers.
+- `podman-compose ps`: List the running containers.
+
+For more information and options, you can refer to the [Podman-Compose documentation](https://github.com/containers/podman-compose).
+
+### Example
+
+Here is an example `docker-compose.yml` file for this project:
+
+```yaml
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - API_KEY=${API_KEY}
+    volumes:
+      - .:/app
+
 
 ## API Endpoints
 
