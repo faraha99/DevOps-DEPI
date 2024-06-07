@@ -32,6 +32,9 @@ This is a Flask web application that provides the current adjusted time and weat
 
 ## Running the Application
 
+To run the application:
+python3 app.py
+
 To run the application using Podman, make sure you have Podman installed on your machine.
 
 1. Build the Podman image:
@@ -71,39 +74,6 @@ Once Podman-Compose is installed, you can use it to manage your containers. Here
 
 For more information and options, you can refer to the [Podman-Compose documentation](https://github.com/containers/podman-compose).
 
-### Example
-
-Here is an example `docker-compose.yml` file for this project:
-
-```yaml
-version: '3.8'
-
-services:
-  web:
-    build: .
-    ports:
-      - "5000:5000"
-    environment:
-      - API_KEY=${API_KEY}
-    volumes:
-      - .:/app
-
-
-## API Endpoints
-
-`GET /` returns the current adjusted time and weather information for Cairo, Egypt.
-
-Sample Response:
-
-```json
-{
-  "current_time": "2023-05-23 11:22:33 AM",
-  "time_zone": "Africa/Cairo",
-  "weather": {
-    "description": "clear sky",
-    "temperature": 25.0
-  }
-}
 
 ## Running Tests
 
