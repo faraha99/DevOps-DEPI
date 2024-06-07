@@ -33,7 +33,12 @@ This is a Flask web application that provides the current adjusted time and weat
 ## Running the Application
 
 To run the application:
-python3 app.py
+
+
+    ```bash
+   python3 app.py
+    ```
+
 
 To run the application using Podman, make sure you have Podman installed on your machine.
 
