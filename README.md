@@ -34,9 +34,9 @@ This is a Flask web application that provides the current adjusted time and weat
 
 To run the application:
 
-
+   
     ```bash
-   python3 app.py
+    python3 app.py .
     ```
 
 
