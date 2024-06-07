@@ -32,11 +32,19 @@ This is a Flask web application that provides the current adjusted time and weat
 
 ## Running the Application
 
-To run the application, use the following command:
+To run the application using Podman, make sure you have Podman installed on your machine.
 
-```bash
-python app.py
-```
+1. Build the Podman image:
+
+    ```bash
+    podman build -t flask-app .
+    ```
+
+2. Run the Podman container:
+
+    ```bash
+    podman run -p 5000:5000 --env-file .env flask-app
+    ```
 
 The application will be accessible at <http://127.0.0.1:5000/>.
 
@@ -55,7 +63,6 @@ Sample Response:
     "temperature": 25.0
   }
 }
-```
 
 ## Running Tests
 
@@ -76,7 +83,10 @@ pytest
 │   └── index.html
 ├── requirements.txt        # Project dependencies
 ├── README.md               # Project documentation
-└── .env                    # Environment variables (not included in version control)
+├── .env                    # Environment variables (not included in version control)
+├── Containerfile           # Dockerfile for building the application image
+└── docker-compose.yml      # Docker Compose configuration for running the application
+
 ```
 
 ## License
