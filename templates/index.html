@@ -1,25 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <title>Time and Weather App</title>
 </head>
-
 <body>
-    <div class="container">
-        <h1 class="mt-5">Weather App</h1>
-        <div class="card mt-3">
-            <div class="card-body">
-                <h5 class="card-title">Current Time and Weather in {{ time_zone }}</h5>
-                <p class="card-text"><strong>Current Time:</strong> {{ current_time }}</p>
-                <p class="card-text"><strong>Weather Condition:</strong> {{ weather_description }}</p>
-                <p class="card-text"><strong>Temperature:</strong> {{ temperature }}°C</p>
-            </div>
-        </div>
-    </div>
-</body>
+    <h1>Choose a Country</h1>
+    <form method="POST">
+        <select name="country">
+            {% for country in countries %}
+                <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Get Time and Weather</button>
+    </form>
 
+    {% if data %}
+        <h2>Time and Weather in {{ data.city }}, {{ data.country }}</h2>
+        <p>Current Time: {{ data.current_time }}</p>
+        <p>Time Zone: {{ data.time_zone }}</p>
+        <p>Weather: {{ data.weather.description }}</p>
+        <p>Temperature: {{ data.weather.temperature }} °C</p>
+    {% endif %}
+</body>
 </html>
