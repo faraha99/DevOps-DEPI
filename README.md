@@ -97,7 +97,7 @@ pytest
 │   └── test_app.py         # Test cases
 ├── templates
 │   └── index.html
-│   └── index.html
+│   └──timer_weather.html
 ├── requirements.txt        # Project dependencies
 ├── README.md               # Project documentation
 ├── .env                    # Environment variables (not included in version control)
