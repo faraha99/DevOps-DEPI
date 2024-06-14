@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-API_KEY = 'bad4c8cff47886ca6d92626fbee32d8e'
+API_KEY = 'KEY"
 COUNTRIES = {
     'Egypt': 'Cairo',
     'India': 'Delhi',
