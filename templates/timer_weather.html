@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Time and Weather App</title>
+</head>
+<body>
+    <h1>Choose a Country</h1>
+    <form method="POST">
+        <select name="country">
+            {% for country in countries %}
+                <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Get Time and Weather</button>
+    </form>
+
+    {% if data %}
+        <h2>Time and Weather in {{ data.city }}, {{ data.country }}</h2>
+        <p>Current Time: {{ data.current_time }}</p>
+        <p>Time Zone: {{ data.time_zone }}</p>
+        <p>Weather: {{ data.weather.description }}</p>
+        <p>Temperature: {{ data.weather.temperature }} °C</p>
+    {% endif %}
+</body>
+</html>
