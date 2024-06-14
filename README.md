@@ -51,7 +51,7 @@ To run the application using Podman, make sure you have Podman installed on your
 2. Run the Podman container:
 
     ```bash
-    podman run -p 5000:5000 --env-file .env flask-app
+    podman run -p 5000:5000  flask-app
     ```
 
 The application will be accessible at <http://127.0.0.1:5000/>.
