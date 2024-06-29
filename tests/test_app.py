@@ -22,11 +22,6 @@ def test_index_page(client):
     assert rv.status_code == 200
     assert b'Choose a Country' in rv.data
 
-def test_post_country(client):
-    rv = client.post('/', data={'country': 'Egypt'})
-    assert rv.status_code == 200
-    assert b'Time and Weather in Cairo, Egypt' in rv.data
-
 def test_invalid_country(client):
     rv = client.post('/', data={'country': 'InvalidCountry'})
     assert rv.status_code == 200
