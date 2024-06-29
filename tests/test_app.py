@@ -1,11 +1,16 @@
 import sys
 import os
 import pytest
+from flask import Flask
 
-# Insert the parent directory into the sys.path to import the app
+# Add the parent directory to the sys.path to import the app
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+# Import the app after adding it to sys.path
 from app import app
+
+# Mock API_KEY for testing
+os.environ['API_KEY'] = 'mock_api_key_for_testing'
 
 @pytest.fixture
 def client():
