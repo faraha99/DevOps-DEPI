@@ -2,10 +2,12 @@ from flask import Flask, request, render_template
 import requests
 import pytz
 from datetime import datetime, timedelta
+import os
 
 app = Flask(__name__)
 
-API_KEY = 'your_api_key_here'  # Replace with your actual API key
+# Fetch API_KEY from environment variables
+API_KEY = os.getenv('API_KEY')
 
 COUNTRIES = {
     'Egypt': 'Cairo',
