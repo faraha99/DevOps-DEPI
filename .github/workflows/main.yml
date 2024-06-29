@@ -47,7 +47,7 @@ jobs:
 
       - name: Log in to Docker Hub
         run: |
-          podman login -u farah729 -p $DOCKER_HUB_ACCESS_TOKEN docker.io
+          podman login -u farah729 -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} docker.io
 
       - name: Push Podman image
         run: |
@@ -73,7 +73,7 @@ jobs:
 
       - name: Log in to Docker Hub
         run: |
-          podman login -u farah729 -p DOCKER_HUB_ACCESS_TOKEN docker.io
+          podman login -u farah729 -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} docker.io
 
       - name: Push Podman image with tag
         run: |
