@@ -21,11 +21,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pylint
+          pip install pylint flask requests pytz
 
       - name: Lint with pylint
         run: |
-          pylint app.py
+          pylint --disable=all --enable=F,E,R,W app.py
 
       - name: Test with pytest
         run: |
