@@ -23,7 +23,7 @@ COUNTRIES = {
 
 def get_weather(city):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
-    response = requests.get(url)
+    response = requests.get(url, timeout=10)  # Timeout set to 10 seconds (adjust as needed)
     weather_data = response.json()
     return weather_data
 
