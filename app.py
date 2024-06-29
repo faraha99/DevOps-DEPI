@@ -1,11 +1,12 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template
 import requests
 import pytz
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-API_KEY = 'KEY"
+API_KEY = 'your_api_key_here'  # Replace with your actual API key
+
 COUNTRIES = {
     'Egypt': 'Cairo',
     'India': 'Delhi',
@@ -51,5 +52,3 @@ def index():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
-
-    app.run(debug=True, host='0.0.0.0')
