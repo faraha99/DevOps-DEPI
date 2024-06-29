@@ -25,7 +25,7 @@ jobs:
 
       - name: Lint with pylint
         run: |
-          pylint --disable=all --enable=F,E,R,W --reports=n -E python3 app.py
+          pylint --disable=all --enable=F,E,R,W --reports=n app.py
 
       - name: Test with pytest
         run: |
@@ -79,4 +79,3 @@ jobs:
       - name: Push Docker image with tag
         run: |
           docker push farah729/depi:${{ env.TAG }}
-
