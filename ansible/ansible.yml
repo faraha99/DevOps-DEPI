@@ -1,0 +1,22 @@
+---
+- name: Run DEPI Application as Podman Container
+  hosts: local
+  become: true
+  tasks:
+    - name: Ensure Podman is installed
+      ansible.builtin.yum:
+        name: podman
+        state: present
+
+    - name: Pull DEPI image from DockerHub
+      containers.podman.podman_image:
+        name: docker.io/farah729/depi:latest
+        state: present
+
+    - name: Run DEPI container
+      containers.podman.podman_container:
+        name: depi_container
+        image: docker.io/farah729/depi:latest
+        state: started
+        ports:
+          - "5000:5000"
