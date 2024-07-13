@@ -86,8 +86,9 @@ ansible-playbook ansible/ansible.yml -i ansible/hosts
 Terraform Infrastructure Provisioning
 To provision infrastructure for the application using Terraform:
 
-![WhatsApp Image 2024-07-12 at 17 52 53_2597bab7](https://github.com/user-attachments/assets/cee0e4ca-3bf6-4868-8a4d-1b31dac260be)
 
+
+![WhatsApp Image 2024-07-12 at 17 52 53_2597bab7](https://github.com/user-attachments/assets/efcf6aa6-00b0-4937-9efa-79c3a55121c9)
 
 
 Initialize Terraform:
