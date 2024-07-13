@@ -83,13 +83,11 @@ Run Ansible against your target servers:
 bash
 
 ansible-playbook ansible/ansible.yml -i ansible/hosts
+
+![Ansible Deployment](photos/ansible.jpg)
+
 Terraform Infrastructure Provisioning
 To provision infrastructure for the application using Terraform:
-
-
-
-![WhatsApp Image 2024-07-12 at 17 52 53_2597bab7](https://github.com/user-attachments/assets/efcf6aa6-00b0-4937-9efa-79c3a55121c9)
-
 
 Initialize Terraform:
 bash
