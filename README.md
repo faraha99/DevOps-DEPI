@@ -109,9 +109,21 @@ Deployment YAML Files
 Ensure that your deployment YAML files (e.g., deployment.yml, service.yml, ingress.yml) are correctly configured. If you need to make any changes, apply them using:
 
  ```bash
+# Apply namespace
+kubectl apply -f namespace.yml
+
+# Deploy the application
 kubectl apply -f deployment.yml
+
+# Create the service
 kubectl apply -f service.yml
+
+# Set up ingress
 kubectl apply -f ingress.yml
+
+# Apply additional roles
+kubectl apply -f role.yml
+
 
  ```
 ## License
