@@ -41,17 +41,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build Podman image
+      - name: Build Docker image
         run: |
-          podman build -t farah729/depi:latest .
+          docker build -t farah729/depi:latest .
 
       - name: Log in to Docker Hub
         run: |
-          podman login -u farah729 -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} docker.io
+          echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u farah729 --password-stdin
 
-      - name: Push Podman image
+      - name: Push Docker image
         run: |
-          podman push farah729/depi:latest
+          docker push farah729/depi:latest
 
 
   publish-tag:
@@ -67,14 +67,14 @@ jobs:
         run: |
           echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
 
-      - name: Build Podman image with tag
+      - name: Build Docker image with tag
         run: |
-          podman build -t farah729/depi:${{ env.TAG }} .
+          docker build -t farah729/depi:${{ env.TAG }} .
 
       - name: Log in to Docker Hub
         run: |
-          podman login -u farah729 -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} docker.io
+          echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u farah729 --password-stdin
 
-      - name: Push Podman image with tag
+      - name: Push Docker image with tag
         run: |
-          podman push farah729/depi:${{ env.TAG }}
+          docker push farah729/depi:${{ env.TAG }}
