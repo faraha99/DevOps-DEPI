@@ -36,27 +36,29 @@ To run the application:
 
 ```bash
 python3 app.py
+  ```
 To run the application using Podman, make sure you have Podman installed on your machine.
 
 Build the Podman image:
 bash
-
+  ```
 podman build -t flask-app .
+  ```
 Run the Podman container:
 bash
-
+  ```
 podman run -p 5000:5000 flask-app
+  ```
 The application will be accessible at http://127.0.0.1:5000/.
 
 Running Tests
 To run the tests for the application, use the following command:
 
 bash
-
+  ```
 pytest
-Project Structure
-bash
-
+  ```
+Project Structure:
 .
 ├── ansible/                # Ansible directory
 │   ├── ansible.yml         # Ansible playbook file
@@ -81,9 +83,9 @@ Update ansible/ansible.yml with your deployment tasks.
 Edit ansible/hosts to include the IP addresses or hostnames of your target servers.
 Run Ansible against your target servers:
 bash
-
+  ```
 ansible-playbook ansible/ansible.yml -i ansible/hosts
-
+  ```
 ![Ansible Deployment](photos/ansible.jpg)
 
 Terraform Infrastructure Provisioning
@@ -91,13 +93,14 @@ To provision infrastructure for the application using Terraform:
 
 Initialize Terraform:
 bash
-
+  ```
 terraform init
+  ```
 Review and apply the Terraform configuration:
 bash
-
+  ```
 terraform apply
-
+  ```
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Feel free to contribute to this project by submitting issues or pull requests.
