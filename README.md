@@ -88,19 +88,7 @@ ansible-playbook ansible/ansible.yml -i ansible/hosts
   ```
 ![Ansible Deployment](photos/ansible.jpg)
 
-Terraform Infrastructure Provisioning
-To provision infrastructure for the application using Terraform:
 
-Initialize Terraform:
-bash
-  ```
-terraform init
-  ```
-Review and apply the Terraform configuration:
-bash
-  ```
-terraform apply
-  ```
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Feel free to contribute to this project by submitting issues or pull requests.
