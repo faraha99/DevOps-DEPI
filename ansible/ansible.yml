@@ -1,22 +1,31 @@
----
-- name: Run DEPI Application as Podman Container
+- name: Run DEPI Application as Docker Container
   hosts: local
   become: true
+  become_method: sudo
+  become_user: root
   tasks:
-    - name: Ensure Podman is installed
-      ansible.builtin.yum:
-        name: podman
+    - name: Ensure Docker is installed
+      ansible.builtin.apt:
+        name: docker.io
         state: present
+        update_cache: yes
+
+    - name: Start Docker service
+      ansible.builtin.systemd:
+        name: docker
+        state: started
+        enabled: true
 
     - name: Pull DEPI image from DockerHub
-      containers.podman.podman_image:
-        name: docker.io/farah729/depi:latest
-        state: present
+      community.docker.docker_image:
+        name: farah729/depi
+        tag: latest
+        source: pull
 
     - name: Run DEPI container
-      containers.podman.podman_container:
+      community.docker.docker_container:
         name: depi_container
-        image: docker.io/farah729/depi:latest
+        image: farah729/depi:latest
         state: started
         ports:
-          - "5000:5000"
+          - "5001:5000"  # Change this line to use a different port

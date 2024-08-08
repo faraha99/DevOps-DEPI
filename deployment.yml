@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-depi
+  namespace: devops-depi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-depi
+  template:
+    metadata:
+      labels:
+        app: devops-depi
+    spec:
+      containers:
+      - name: devops-depi
+        image: faraha99/devops-depi:latest # Update with the correct image
+        ports:
+        - containerPort: 80 # Change this port based on your application
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"

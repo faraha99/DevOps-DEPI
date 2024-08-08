@@ -1,16 +1,27 @@
+<<<<<<< HEAD
 
 
 # Flask Web Application
+=======
+[![Build Status](https://github.com/terra-farm/terraform-provider-virtualbox/workflows/CI/badge.svg)](https://github.com/terra-farm/terraform-provider-virtualbox/actions?query=branch%3Amaster)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox?ref=badge_shield)
+[![Gitter](https://badges.gitter.im/terra-farm/terraform-provider-virtualbox.svg)](https://gitter.im/terra-farm/terraform-provider-virtualbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+>>>>>>> 2aabe91 (Initial commit)
 
-This is a Flask web application that provides the current adjusted time and weather information for many countries. The weather information is fetched from the OpenWeatherMap API.
+# VirtualBox provider for Terraform
 
-## Features
+Inspired by [terraform-provider-vix](https://github.com/hooklift/terraform-provider-vix)
 
+<<<<<<< HEAD
 - Display the current adjusted time in Cairo, Egypt in the format YYYY-MM-DD HH:MM:SS (AM|PM).
 - Provides weather information for Cairo, including the weather description and temperature.
+=======
+Donated to the `terra-farm` group by [`ccll`](https://github.com/ccll)
+>>>>>>> 2aabe91 (Initial commit)
 
-## Setup and Installation
+Published documentation is located on the [Terra-Farm website](https://terra-farm.github.io/provider-virtualbox/).
 
+<<<<<<< HEAD
 1. **Clone the repository:**
 
    ```bash
@@ -36,9 +47,26 @@ This is a Flask web application that provides the current adjusted time and weat
    ```bash
    API_KEY=<your_openweathermap_api_key>
    ```
+=======
+# How to install
 
-## Running the Application
+Installation instructions for the Terra-Farm thirdparty providers can be found on the 
+[Terra-Farm website](https://terra-farm.github.io/main/installation.html)
 
+# Usage
+
+All usage documentation for the provider is published on the Terra-Farm website under
+the section of the [VirtualBox provider](https://terra-farm.github.io/provider-virtualbox/index.html).
+
+If you want to contribute documentation changes, see the [Contribution guide](CONTRIBUTING.md).
+
+# Limitations
+>>>>>>> 2aabe91 (Initial commit)
+
+- Experimental provider!
+- The defaults here are only tested with the [vagrant insecure (packer) keys](https://github.com/hashicorp/vagrant/tree/master/keys) as the login.
+
+<<<<<<< HEAD
 To run the application locally:
 
 ```bash
@@ -113,3 +141,7 @@ To deploy the application using Ansible:
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Feel free to contribute to this project by submitting issues or pull requests.
+=======
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox?ref=badge_large)
+>>>>>>> 2aabe91 (Initial commit)
