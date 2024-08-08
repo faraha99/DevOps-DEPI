@@ -43,7 +43,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t farah729/depi:latest .
+          docker build -f Containerfile -t farah729/depi:latest .
 
       - name: Log in to Docker Hub
         run: |
@@ -69,7 +69,7 @@ jobs:
 
       - name: Build Docker image with tag
         run: |
-          docker build -t farah729/depi:${{ env.TAG }} .
+          docker build -f Containerfile -t farah729/depi:${{ env.TAG }} .
 
       - name: Log in to Docker Hub
         run: |
