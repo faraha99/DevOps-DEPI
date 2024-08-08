@@ -97,6 +97,23 @@ To deploy the application using Ansible:
 
 ![Ansible Deployment](photos/ansible.jpg)
 
+
+## Minikube Deployment
+To deploy the application using Minikube:
+
+Start Minikube:
+ ```bash
+minikube start
+ ```
+Deployment YAML Files
+Ensure that your deployment YAML files (e.g., deployment.yml, service.yml, ingress.yml) are correctly configured. If you need to make any changes, apply them using:
+
+ ```bash
+kubectl apply -f deployment.yml
+kubectl apply -f service.yml
+kubectl apply -f ingress.yml
+
+ ```
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
