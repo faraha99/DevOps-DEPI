@@ -138,8 +138,8 @@ To monitor and visualize your application using Prometheus and Grafana:
 
 2. **Access Grafana at** [http://127.0.0.1:3000/](http://127.0.0.1:3000/) **and Prometheus at** [http://127.0.0.1:9090/](http://127.0.0.1:9090/).
    
-![Grafana representation](Grafana representation.jpeg)
-![Prometheus representation](Prometheus representation.jpeg)
+![Grafana representation](photos/Grafana representation.jpeg)
+![Prometheus representation](photos/Prometheus representation.jpeg)
 
 ## License
 
