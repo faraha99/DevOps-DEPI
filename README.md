@@ -141,6 +141,9 @@ To monitor and visualize your application using Prometheus and Grafana:
 ![Grafana representation](photos/Grafana%20representation.jpeg)
 ![Prometheus representation](photos/Prometheus%20representation.jpeg)
 
+## System Architecture 
+![Grafana representation](photos/Grafana%20representation.jpeg)
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
