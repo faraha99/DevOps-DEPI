@@ -65,20 +65,39 @@ To run the tests and lint the application, use the following commands:
    pytest
    ```
 
-## Project Structure
+
+### **Project Structure**
 
 ```
 .
-├── ansible/                 # Ansible directory
+├── ansible/                 
 │   ├── ansible.yml          # Ansible playbook file
 │   └── hosts                # Inventory file with target hosts
 ├── app.py                   # Main application file
 ├── Containerfile            # Dockerfile for building the application image
-├── README.md                # Project documentation (this file)
+├── README.md                # Project documentation
 ├── requirements.txt         # Project dependencies
 ├── templates/               # Flask HTML templates
 │   ├── index.html
 │   └── timer_weather.html
+├── alert.rules.yml          # Prometheus alerting rules
+├── deployment.yml           # Kubernetes Deployment configuration
+├── ingress.yml              # Kubernetes Ingress configuration
+├── namespace.yml            # Kubernetes Namespace configuration
+├── prometheus.yml           # Prometheus configuration
+├── role.yml                 # Kubernetes Role-based access configuration
+├── service.yml              # Kubernetes Service configuration
+├── my-helm-chart/           # Helm chart directory
+│   ├── charts               # Helm charts
+│   ├── Chart.yaml           # Helm chart definition
+│   ├── templates/          # Helm templates
+│   └── values.yaml          # Helm values
+├── CHANGELOG.md             # Change log for project updates
+├── LICENSE                  # Project license information
+├── myenv/                   # Python virtual environment
+├── photos/                  # Project photos
+├── __pycache__/             # Python bytecode cache
+└── tests/                   # Test files and configurations
 ```
 
 ## System Architecture 
