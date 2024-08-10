@@ -1,14 +1,9 @@
-"""
-Flask application to display weather information based on selected country.
-"""
-
 from datetime import datetime, timedelta
 import requests
 import pytz
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify  # Add jsonify import
 
 app = Flask(__name__)
-
 
 @app.route('/healthz', methods=['GET'])
 def healthz():
@@ -17,7 +12,6 @@ def healthz():
 @app.route('/readiness', methods=['GET'])
 def readiness():
     return jsonify({"status": "ready"}), 200
-
 
 # Hardcoded API_KEY for testing purposes
 API_KEY = 'bad4c8cff47886ca6d92626fbee32d8e'
