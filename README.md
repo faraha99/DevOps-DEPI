@@ -164,6 +164,105 @@ To monitor and visualize your application using Prometheus and Grafana:
 ![Grafana representation](photos/Grafana%20representation.jpeg)
 ![Prometheus representation](photos/Prometheus%20representation.jpeg)
 
+
+
+## Helm Deployment
+
+### Prerequisites
+
+- Ensure Helm is installed on your system. For installation instructions, refer to the [Helm documentation](https://helm.sh/docs/intro/install/).
+- Ensure `kubectl` is configured to interact with your Kubernetes cluster.
+
+### Deploying the Application with Helm
+
+1. **Add Helm Chart Repository (if not already added):**
+   ```bash
+   helm repo add my-repo https://example.com/helm-charts
+   helm repo update
+   ```
+
+2. **Install the Helm Chart:**
+   Replace `my-helm-chart` with the name of your chart directory if different.
+
+   ```bash
+   helm install my-flask-app my-helm-chart -f my-helm-chart/values.yaml -n devops-depi
+   ```
+
+   - `my-flask-app`: The name of the Helm release.
+   - `my-helm-chart`: The path to your Helm chart directory.
+   - `-f my-helm-chart/values.yaml`: Specifies the values file for configuration.
+   - `-n devops-depi`: The namespace where the application will be deployed.
+
+3. **Upgrade the Helm Chart:**
+   If you need to update your Helm chart with new changes, use:
+
+   ```bash
+   helm upgrade my-flask-app my-helm-chart -f my-helm-chart/values.yaml -n devops-depi
+   ```
+
+4. **Uninstall the Helm Chart:**
+   To remove the Helm release, use:
+
+   ```bash
+   helm uninstall my-flask-app -n devops-depi
+   ```
+
+### Kubernetes Commands
+
+After deploying with Helm, you may need to use the following Kubernetes commands to manage and inspect your deployment:
+
+1. **List Helm Releases:**
+   ```bash
+   helm list -n devops-depi
+   ```
+
+2. **Check the Status of Helm Release:**
+   ```bash
+   helm status my-flask-app -n devops-depi
+   ```
+
+3. **Get Kubernetes Pods:**
+   ```bash
+   kubectl get pods -n devops-depi
+   ```
+
+4. **Get Kubernetes Services:**
+   ```bash
+   kubectl get services -n devops-depi
+   ```
+
+5. **View Logs of a Specific Pod:**
+   Replace `pod-name` with the name of the pod you want to inspect.
+   ```bash
+   kubectl logs pod-name -n devops-depi
+   ```
+
+6. **Port Forward to Access the Application Locally:**
+   ```bash
+   kubectl port-forward svc/devops-depi 5000:5000 -n devops-depi
+   ```
+
+7. **Describe a Specific Pod:**
+   Replace `pod-name` with the name of the pod.
+   ```bash
+   kubectl describe pod pod-name -n devops-depi
+   ```
+
+### Helm Chart Configuration
+
+The Helm chart configuration can be customized by editing the `values.yaml` file in the Helm chart directory. Key configuration options include:
+
+- `replicaCount`: Number of replicas for the application.
+- `image`: Docker image repository and tag.
+- `service`: Configuration for the Kubernetes Service.
+- `resources`: Resource requests and limits.
+- `livenessProbe` and `readinessProbe`: Health check configurations.
+- `ingress`: Ingress settings for external access.
+- `autoscaling`: Auto-scaling configuration.
+
+For a detailed explanation of each configuration option, refer to the `values.yaml` file in the Helm chart directory.
+
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
