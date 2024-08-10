@@ -1,4 +1,3 @@
-# Use the official Python image from the Docker Hub
 FROM python:3.9-slim
 
 # Set the working directory in the container
@@ -13,12 +12,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 
-# Expose the port the app runs on (this is more for documentation purposes in Podman)
+# Expose the port the app runs on
 EXPOSE 5000
 
-# Set environment variables (same as Docker)
+# Set environment variables
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
-# Command to start the application (using Podman's command structure)
+# Command to start the application
 CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]

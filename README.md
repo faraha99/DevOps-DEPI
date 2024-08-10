@@ -1,27 +1,7 @@
-<<<<<<< HEAD
 
 
 # Flask Web Application
-=======
-[![Build Status](https://github.com/terra-farm/terraform-provider-virtualbox/workflows/CI/badge.svg)](https://github.com/terra-farm/terraform-provider-virtualbox/actions?query=branch%3Amaster)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox?ref=badge_shield)
-[![Gitter](https://badges.gitter.im/terra-farm/terraform-provider-virtualbox.svg)](https://gitter.im/terra-farm/terraform-provider-virtualbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
->>>>>>> 2aabe91 (Initial commit)
 
-# VirtualBox provider for Terraform
-
-Inspired by [terraform-provider-vix](https://github.com/hooklift/terraform-provider-vix)
-
-<<<<<<< HEAD
-- Display the current adjusted time in Cairo, Egypt in the format YYYY-MM-DD HH:MM:SS (AM|PM).
-- Provides weather information for Cairo, including the weather description and temperature.
-=======
-Donated to the `terra-farm` group by [`ccll`](https://github.com/ccll)
->>>>>>> 2aabe91 (Initial commit)
-
-Published documentation is located on the [Terra-Farm website](https://terra-farm.github.io/provider-virtualbox/).
-
-<<<<<<< HEAD
 1. **Clone the repository:**
 
    ```bash
@@ -47,26 +27,7 @@ Published documentation is located on the [Terra-Farm website](https://terra-far
    ```bash
    API_KEY=<your_openweathermap_api_key>
    ```
-=======
-# How to install
 
-Installation instructions for the Terra-Farm thirdparty providers can be found on the 
-[Terra-Farm website](https://terra-farm.github.io/main/installation.html)
-
-# Usage
-
-All usage documentation for the provider is published on the Terra-Farm website under
-the section of the [VirtualBox provider](https://terra-farm.github.io/provider-virtualbox/index.html).
-
-If you want to contribute documentation changes, see the [Contribution guide](CONTRIBUTING.md).
-
-# Limitations
->>>>>>> 2aabe91 (Initial commit)
-
-- Experimental provider!
-- The defaults here are only tested with the [vagrant insecure (packer) keys](https://github.com/hashicorp/vagrant/tree/master/keys) as the login.
-
-<<<<<<< HEAD
 To run the application locally:
 
 ```bash
@@ -105,21 +66,44 @@ To run the tests and lint the application, use the following commands:
    pytest
    ```
 
-## Project Structure
+
+### **Project Structure**
 
 ```
 .
-├── ansible/                 # Ansible directory
+├── ansible/                 
 │   ├── ansible.yml          # Ansible playbook file
 │   └── hosts                # Inventory file with target hosts
 ├── app.py                   # Main application file
 ├── Containerfile            # Dockerfile for building the application image
-├── README.md                # Project documentation (this file)
+├── README.md                # Project documentation
 ├── requirements.txt         # Project dependencies
 ├── templates/               # Flask HTML templates
 │   ├── index.html
 │   └── timer_weather.html
+├── alert.rules.yml          # Prometheus alerting rules
+├── deployment.yml           # Kubernetes Deployment configuration
+├── ingress.yml              # Kubernetes Ingress configuration
+├── namespace.yml            # Kubernetes Namespace configuration
+├── prometheus.yml           # Prometheus configuration
+├── role.yml                 # Kubernetes Role-based access configuration
+├── service.yml              # Kubernetes Service configuration
+├── my-helm-chart/           # Helm chart directory
+│   ├── charts               # Helm charts
+│   ├── Chart.yaml           # Helm chart definition
+│   ├── templates/          # Helm templates
+│   └── values.yaml          # Helm values
+├── CHANGELOG.md             # Change log for project updates
+├── LICENSE                  # Project license information
+├── myenv/                   # Python virtual environment
+├── photos/                  # Project photos
+├── __pycache__/             # Python bytecode cache
+└── tests/                   # Test files and configurations
 ```
+
+## System Architecture 
+![system architecture](photos/system%20architecture%20.png)
+
 
 ## Ansible Deployment
 
@@ -136,12 +120,53 @@ To deploy the application using Ansible:
 
 ![Ansible Deployment](photos/ansible.jpg)
 
+## Minikube Deployment
+
+To deploy the application using Minikube:
+
+1. Start Minikube:
+
+   ```bash
+   minikube start
+   ```
+
+2. Ensure that your deployment YAML files (e.g., deployment.yml, service.yml, ingress.yml) are correctly configured. If you need to make any changes, apply them using:
+
+   ```bash
+   # Apply namespace
+   kubectl apply -f namespace.yml
+
+   # Deploy the application
+   kubectl apply -f deployment.yml
+
+   # Create the service
+   kubectl apply -f service.yml
+
+   # Set up ingress
+   kubectl apply -f ingress.yml
+
+   # Apply additional roles
+   kubectl apply -f role.yml
+   ```
+
+## Monitoring and Visualization
+
+To monitor and visualize your application using Prometheus and Grafana:
+
+1. **Port forward Grafana and Prometheus services:**
+
+   ```bash
+   kubectl port-forward svc/grafana -n monitoring 3000:80
+   kubectl port-forward svc/prometheus-server -n monitoring 9090:80
+   ```
+
+2. **Access Grafana at** [http://127.0.0.1:3000/](http://127.0.0.1:3000/) **and Prometheus at** [http://127.0.0.1:9090/](http://127.0.0.1:9090/).
+
+![Grafana representation](photos/Grafana%20representation.jpeg)
+![Prometheus representation](photos/Prometheus%20representation.jpeg)
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Feel free to contribute to this project by submitting issues or pull requests.
-=======
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox?ref=badge_large)
->>>>>>> 2aabe91 (Initial commit)

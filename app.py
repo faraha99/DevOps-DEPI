@@ -9,6 +9,16 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+
+@app.route('/healthz', methods=['GET'])
+def healthz():
+    return jsonify({"status": "healthy"}), 200
+
+@app.route('/readiness', methods=['GET'])
+def readiness():
+    return jsonify({"status": "ready"}), 200
+
+
 # Hardcoded API_KEY for testing purposes
 API_KEY = 'bad4c8cff47886ca6d92626fbee32d8e'
 

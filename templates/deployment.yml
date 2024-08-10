@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: devops-depi
-        image: farah729/depi:latest # Update with the correct image
+        image: faraha99/devops-depi:latest # Update with the correct image
         ports:
         - containerPort: 80 # Change this port based on your application
         resources:
