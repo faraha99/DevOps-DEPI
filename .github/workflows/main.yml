@@ -4,25 +4,24 @@ on:
   push:
     branches:
       - main
-      
+
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: '3.9'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pylint flask pytz
-          pip install pylint requests pytest
+          pip install pylint flask pytz requests pytest
 
       - name: Lint with pylint
         run: |
@@ -32,14 +31,13 @@ jobs:
         run: |
           pytest
 
-
   build-and-push:
     needs: lint-and-test
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build Docker image
         run: |
@@ -53,3 +51,17 @@ jobs:
         run: |
           docker push farah729/depi:latest
 
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Server
+        run: |
+          # Add your deployment commands here
+          echo "Deploying to the server..."
+          # Example: Deploy using a script or tool
+          # ./deploy-script.sh
