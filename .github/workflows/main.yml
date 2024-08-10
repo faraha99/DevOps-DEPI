@@ -41,7 +41,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -f Containerfile -t farah729/depi:latest .
+          docker build -f Dockerfile -t farah729/depi:latest .
 
       - name: Log in to Docker Hub
         run: |
@@ -51,28 +51,3 @@ jobs:
         run: |
           docker push farah729/depi:latest
 
-
-  publish-tag:
-    if: startsWith(github.ref, 'refs/tags/')
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Extract tag name
-        id: extract_tag
-        run: |
-          echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
-
-      - name: Build Docker image with tag
-        run: |
-          docker build -f Containerfile -t farah729/depi:${{ env.TAG }} .
-
-      - name: Log in to Docker Hub
-        run: |
-          echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u farah729 --password-stdin
-
-      - name: Push Docker image with tag
-        run: |
-          docker push farah729/depi:${{ env.TAG }}
