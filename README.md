@@ -81,6 +81,10 @@ To run the tests and lint the application, use the following commands:
 │   └── timer_weather.html
 ```
 
+## System Architecture 
+![system architecture](photos/system%20architecture%20.png)
+
+
 ## Ansible Deployment
 
 To deploy the application using Ansible:
@@ -140,9 +144,6 @@ To monitor and visualize your application using Prometheus and Grafana:
 
 ![Grafana representation](photos/Grafana%20representation.jpeg)
 ![Prometheus representation](photos/Prometheus%20representation.jpeg)
-
-## System Architecture 
-![system architecture](photos/system%20architecture%20.png)
 
 ## License
 
