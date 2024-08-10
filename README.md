@@ -1,6 +1,4 @@
 
-
-
 # Flask Web Application
 
 1. **Clone the repository:**
@@ -28,6 +26,7 @@
    ```bash
    API_KEY=<your_openweathermap_api_key>
    ```
+
 To run the application locally:
 
 ```bash
@@ -97,39 +96,50 @@ To deploy the application using Ansible:
 
 ![Ansible Deployment](photos/ansible.jpg)
 
-
 ## Minikube Deployment
+
 To deploy the application using Minikube:
 
-Start Minikube:
- ```bash
-minikube start
- ```
-Deployment YAML Files
-Ensure that your deployment YAML files (e.g., deployment.yml, service.yml, ingress.yml) are correctly configured. If you need to make any changes, apply them using:
+1. Start Minikube:
 
- ```bash
-# Apply namespace
-kubectl apply -f namespace.yml
+   ```bash
+   minikube start
+   ```
 
-# Deploy the application
-kubectl apply -f deployment.yml
+2. Ensure that your deployment YAML files (e.g., deployment.yml, service.yml, ingress.yml) are correctly configured. If you need to make any changes, apply them using:
 
-# Create the service
-kubectl apply -f service.yml
+   ```bash
+   # Apply namespace
+   kubectl apply -f namespace.yml
 
-# Set up ingress
-kubectl apply -f ingress.yml
+   # Deploy the application
+   kubectl apply -f deployment.yml
 
-# Apply additional roles
-kubectl apply -f role.yml
+   # Create the service
+   kubectl apply -f service.yml
 
+   # Set up ingress
+   kubectl apply -f ingress.yml
 
- ```
+   # Apply additional roles
+   kubectl apply -f role.yml
+   ```
+
+## Monitoring and Visualization
+
+To monitor and visualize your application using Prometheus and Grafana:
+
+1. **Port forward Grafana and Prometheus services:**
+
+   ```bash
+   kubectl port-forward svc/grafana -n monitoring 3000:80
+   kubectl port-forward svc/prometheus-server -n monitoring 9090:80
+   ```
+
+2. **Access Grafana at** [http://127.0.0.1:3000/](http://127.0.0.1:3000/) **and Prometheus at** [http://127.0.0.1:9090/](http://127.0.0.1:9090/).
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Feel free to contribute to this project by submitting issues or pull requests.
-=======
-## License
