@@ -142,7 +142,7 @@ To monitor and visualize your application using Prometheus and Grafana:
 ![Prometheus representation](photos/Prometheus%20representation.jpeg)
 
 ## System Architecture 
-![Grafana representation](photos/Grafana%20representation.jpeg)
+![system architecture diagram](photos/system%20architecture%20diagram.jpeg)
 
 ## License
 
