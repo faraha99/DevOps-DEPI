@@ -4,25 +4,24 @@ on:
   push:
     branches:
       - main
-      
+
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: '3.9'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pylint flask pytz
-          pip install pylint requests pytest
+          pip install pylint flask pytz requests pytest
 
       - name: Lint with pylint
         run: |
@@ -32,14 +31,13 @@ jobs:
         run: |
           pytest
 
-
   build-and-push:
     needs: lint-and-test
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build Docker image
         run: |
@@ -53,3 +51,28 @@ jobs:
         run: |
           docker push farah729/depi:latest
 
+
+  publish-tag:
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Extract tag name
+        id: extract_tag
+        run: |
+          echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+
+      - name: Build Docker image with tag
+        run: |
+          docker build -f Containerfile -t farah729/depi:${{ env.TAG }} .
+
+      - name: Log in to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u farah729 --password-stdin
+
+      - name: Push Docker image with tag
+        run: |
+          docker push farah729/depi:${{ env.TAG }}

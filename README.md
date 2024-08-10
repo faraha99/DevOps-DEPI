@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 # Flask Web Application
@@ -170,3 +171,7 @@ To monitor and visualize your application using Prometheus and Grafana:
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Feel free to contribute to this project by submitting issues or pull requests.
+=======
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fterra-farm%2Fterraform-provider-virtualbox?ref=badge_large)
+>>>>>>> 2aabe91 (Initial commit)
