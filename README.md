@@ -101,7 +101,7 @@ To run the tests and lint the application, use the following commands:
 ```
 
 ## System Architecture 
-![system architecture](photos/system%20architecture%20.png)
+![architecture](photos/architecture.png)
 
 
 ## Ansible Deployment
