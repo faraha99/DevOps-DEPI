@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 
 # Flask Web Application
 
