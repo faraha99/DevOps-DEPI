@@ -50,18 +50,3 @@ jobs:
       - name: Push Docker image
         run: |
           docker push farah729/depi:latest
-
-  deploy:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to Server
-        run: |
-          # Add your deployment commands here
-          echo "Deploying to the server..."
-          # Example: Deploy using a script or tool
-          # ./deploy-script.sh
