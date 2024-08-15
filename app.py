@@ -14,7 +14,7 @@ def readiness():
     return jsonify({"status": "ready"}), 200
 
 # Hardcoded API_KEY for testing purposes
-API_KEY = 'bad4c8cff47886ca6d92626fbee32d8e'
+API_KEY = 'your api key'
 
 COUNTRIES = {
     'Egypt': 'Cairo',
